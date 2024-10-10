@@ -375,4 +375,18 @@ const bills = [
 
 // Start coding here
 
-const totalPaidByLocation;
+function getTotalByLocation(bills) {
+    const totalPaidByLocation = {};
+    bills.forEach(bill => {
+        const location = bill.location;
+        const total = bill.total;
+        if (!totalPaidByLocation[location]) {
+            totalPaidByLocation[location] = 0;
+        }
+        totalPaidByLocation[location] += total;
+    })
+    const result = Object.entries(totalPaidByLocation).map(([location, total]) => `${location}: ${total}`).join(', ');
+    return result;
+}
+
+console.log(getTotalByLocation(bills))
