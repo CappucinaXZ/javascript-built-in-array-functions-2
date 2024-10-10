@@ -374,3 +374,5 @@ const bills = [
 ];
 
 // Start coding here
+let ans = bills.map(ans => ans.total).reduce((acc,cur)=> acc+cur)
+console.log("Total bill transaction is "+ans)

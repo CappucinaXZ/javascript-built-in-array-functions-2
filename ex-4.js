@@ -374,4 +374,20 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+function unique(value, index, array) {
+  //console.log(index) //ตำเเหน่ง
+  //console.log(value) //ค่า
+  //console.log(array.indexOf(value)) // มันเรียกออกมาเเค่ตำเเหน่งเเรกที่เจอ
+  //console.log(array.indexOf(value) === index)ฝฝเซฟเฉพาะค่าที่ตรงกับตัวเเรก
+  return array.indexOf(value) === index;
+}
+let uniqeMember = [];
+const totalMembers = bills.filter(ans => ans.member !== null).map(ans => ans.member.name);
+console.log(totalMembers)
+//console.log(totalMembers.keys())
+//let ans = totalMembers.filter(ans => !uniqeMember.includes(ans)).map(ans => uniqeMember.push(ans))
+let ans = totalMembers.filter(unique)
+console.log(ans)
+
+console.log("Unique Members Count: "+ ans.length)
+
