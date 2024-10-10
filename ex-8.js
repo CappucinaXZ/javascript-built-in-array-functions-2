@@ -374,5 +374,21 @@ const bills = [
 ];
 
 // Start coding here
+let sum ={}
+function unique(value, index, array) {
+    return array.indexOf(value) === index;
+}
+    let Ans = []
+    let allLocation = bills.map(ans => ans.location).filter(unique);
+    //console.log(allLocation)
+    for(let i = 0;i<allLocation.length;i++){
+        console.log(allLocation[i])
+        let test = bills.filter(acc => acc.location === allLocation[i]).reduce((acc,cur) => acc += cur.total,0);
+        //console.log(test)
+        sum[allLocation[i]] = test
+        //console.log(sum)
+    }
 
-const totalPaidByLocation;
+    //console.log(sum)
+    const totalPaidByLocation = sum
+    console.log(totalPaidByLocation)
